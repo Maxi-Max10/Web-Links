@@ -5,20 +5,20 @@ include_once '../model/conexion.php';
 
 $usuario = $_POST['usuario'];
 $password = $_POST['password'];
-$id = $_POST['id'];
 
-// $_SESSION['usuario'] = $usuario;
+print_r($_POST);
+
 
 $sentencia = $bd->prepare("SELECT * FROM usuarios WHERE usuario = ? AND password_us = ? ");
 $sentencia->execute([$usuario, $password]);
 $datos = $sentencia->fetch(PDO::FETCH_OBJ);//Lo guardo dentro del objeto
 
-// print_r($datos);
+// print $_SESSION['id'] = $datos->id;
 
 if ($datos === FALSE) {
     header('Location: ../login.php');
 }elseif($sentencia->rowCount() == 1){
-   $_SESSION['nombre'] = $usuario;
+   $_SESSION['id'] = $datos->id;
    header('Location: ../index.php');
 }
 

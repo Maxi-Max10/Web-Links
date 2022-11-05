@@ -7,7 +7,7 @@ print_r($_POST);
 
  session_start();
  include_once '../model/conexion.php';
-
+    
     $nombre = $_POST['nombre'];
     $usuario = $_POST['usuario'];
     $email = $_POST['email'];

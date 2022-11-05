@@ -9,7 +9,11 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-</head>
+
+        <!-- iconos cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -25,7 +29,7 @@
                         <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./crearTarjeta.php">Crear Tarjeta</a>
+                        <a class="nav-link active" aria-current="page"  data-bs-target="#crearTarjeta" data-bs-toggle="modal"> <i class="bi bi-person-plus-fill"></i>Crear Tarjeta</a> 
                     </li>
 
                     <li class="nav-item">

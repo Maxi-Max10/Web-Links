@@ -2,7 +2,7 @@
 
 session_start();
 //SI YA EXISTE UNA SESION LE DIGO QUE NO SALGA DE LA PAGINA INDEX
-if (isset($_SESSION['nombre'])) { 
+if (isset($_SESSION['id'])) { 
     header('Location: index.php');
 }
 
