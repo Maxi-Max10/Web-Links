@@ -56,7 +56,7 @@ if (isset($_SESSION['nombre'])) {
         </form>
         <div class="d-flex gap-1 justify-content-center mt-1">
             <div>¿No tienes una cuenta?</div>
-            <a href="#" class="text-decoration-none text-info fw-semibold">Registrate</a>
+            <a href="registro.php" class="text-decoration-none text-info fw-semibold">Registrate</a>
         </div>
         <div class="p-3">
             <div class="border-bottom text-center" style="height: 0.9rem">

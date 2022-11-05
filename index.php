@@ -4,42 +4,46 @@ session_start();
 
 include 'Vista/header.php';
 
-
 if (!isset($_SESSION['nombre'])) {//si NO existe una sesion llamada nombre que lo mande a login
     header('Location: login.php');
 }elseif(isset($_SESSION['nombre'])){
     include 'model/conexion.php';//
-    $sentencia = $bd->query("SELECT * FROM links;");// estos tres los borro y lo cambio por el de la pagina
+    $usuario = $_SESSION['nombre'];   
+    $sentencia = $bd->query("SELECT * FROM links INNER JOIN usuarios ON
+                            usuarios.id = links.usuario_id
+                            where usuarios.usuario = '".$usuario."'");// estos tres los borro y lo cambio por el de la pagina
     $links = $sentencia->fetchAll(PDO::FETCH_OBJ);//
 
 }else{
     echo "ERROR EN EL SISTEMA";
 }
 
-
 ?>
-
 
 <!doctype html>
 <html lang="en">
 
-
 <header>
     <!-- place navbar here -->
-    <div class="container">
+    <div class="container mt-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-
+        <?php
+                                          
+                
+            ?>
+       
             <?php
                 foreach($links as $dato){                               
 
             ?>
 
-            <div class="col">
+            <div class="col mt-5">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $dato -> title; ?></h5>
                         <p class="card-text"><?php echo $dato -> description; ?></p>
+                        <a au class="card-text" href="<?php echo $dato -> url; ?>">URL</a>
                     </div>
                     <div class="row">
                         <i class="bi bi-pen-fill"></i>
