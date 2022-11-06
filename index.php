@@ -38,18 +38,19 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                         <p class="card-text"><?php echo $dato -> description; ?></p>
                         <a au class="card-text" href="<?php echo $dato -> url; ?>">URL</a>
                         <div class="row justify-content-around mt-5">
-                        <div class="col-2">
-                            <a class="text-success " data-bs-target="#editarTarjeta<?php echo $dato -> id_link; ?>" data-bs-toggle="modal">
-                                <i class="bi bi-pencil-square"></i></a>
-                        </div>
-                        <div class="col-2">
-                            <a onclick="return confirm('¿Estas seguro de eilimiar?')" class="text-danger"
-                                href="eliminar.php?id_usuario=<?php echo $dato -> id_usuario; ?>">
-                                <i class="bi bi-trash-fill"></i></a>
+                            <div class="col-2">
+                                <a class="text-success" data-bs-target="#editarTarjeta<?php echo $dato -> id_link; ?>"
+                                    data-bs-toggle="modal">
+                                    <i class="bi bi-pencil-square"></i></a>
+                            </div>
+                            <div class="col-2">
+                                <a class="text-danger" data-bs-target="#eliminarTarjeta<?php echo $dato -> id_link; ?>"
+                                    data-bs-toggle="modal">
+                                    <i class="bi bi-trash-fill"></i></a>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    
+
 
                     <div class="card-footer">
                         <small class="text-muted">Última actualización <?php echo $dato -> created_at; ?></small>
@@ -116,7 +117,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                
+
 
                 <div class="modal-body">
                     <form method="POST" action="Controller/editarProceso.php">
@@ -146,14 +147,53 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                     </form>
                 </div>
 
-                
+
 
             </div>
         </div>
     </div>
     <?php
-                }                               
-                ?>
+      }                               
+    ?>
+
+    <!-- MODALS ELIMINAR -->
+
+    <?php
+        foreach($links as $dato){                               
+    ?>
+
+    <div class="modal fade" id="eliminarTarjeta<?php echo $dato -> id_link; ?>" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">¿Esta seguro que desea eliminar tarjeta?</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="Controller/eliminarProceso.php">
+                        <input type="text" name="id_link" value="<?php echo $dato->id_link; ?> "
+                            style="visibility: hidden;">
+                        <div class="mb-3">
+                            <h2> <?php echo $dato->title; ?> </h2>
+                        </div>
+                        <div class="modal-footer mt-5">
+                            <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
+                            <input type="submit" class="btn btn-danger btn-lg" value="Eliminar" class="btn btn-primary">
+                        </div>
+                </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+    </div>
+    <?php
+      }                               
+    ?>
+
+
 
 
 </header>
