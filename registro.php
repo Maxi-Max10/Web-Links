@@ -83,23 +83,26 @@
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />
                 </div>
-                <input class="form-control bg-light" type="text" placeholder="Nombre de Usuario" name="usuario" />
-                <div id="e_usuario"></div>
+                <input class="form-control bg-light" type="text" placeholder="Nombre de Usuario" name="usuario" />               
             </div>
+            <div id="e_usuario" class="text-danger"></div>
+
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/envelope-fill.svg" alt="username-icon" style="height: 1rem" />
                 </div>
-                <input class="form-control bg-light" type="text" placeholder="Email" name="email" />
-                <div id="e_email"></div>
+                <input class="form-control bg-light" type="text" placeholder="Email" name="email"/>                
             </div>
+            <div id="e_email" class="text-danger"></div>
+
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/password-icon.svg" alt="password-icon" style="height: 1rem" />
                 </div>
                 <input class="form-control bg-light" type="password" placeholder="Password" name="password_us" />
-                <div id="e_password"></div>
-            </div>    
+            </div>   
+            <div id="e_password" class="text-danger"></div> 
+            
             <div class="d-grid gap-2">
                 <input type="hidden" name="ajax">
                 <input type="button" id="btn_ajax" class="btn btn-info mt-5 text-white" value="Enviar"></input>
