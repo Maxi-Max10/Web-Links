@@ -37,7 +37,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                         <h5 class="card-title"><?php echo $dato -> title; ?></h5>
                         <p class="card-text"><?php echo $dato -> description; ?></p>
                         <a au class="card-text" href="<?php echo $dato -> url; ?>">URL</a>
-                        <div class="row justify-content-around mt-5">
+                        <div class="row justify-content-around mt-3">
                             <div class="col-2">
                                 <a class="text-success" data-bs-target="#editarTarjeta<?php echo $dato -> id_link; ?>"
                                     data-bs-toggle="modal">
@@ -53,7 +53,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
 
 
                     <div class="card-footer">
-                        <small class="text-muted">Última actualización <?php echo $dato -> created_at; ?></small>
+                        <small class="text-muted">Fecha de creación <?php echo $dato -> created_at; ?></small>
                     </div>
                 </div>
             </div>
@@ -94,11 +94,10 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                             </div>
                             <div class="modal-footer mt-5">
                                 <input type="button" class="btn btn-danger" data-bs-dismiss="modal" value="Cancelar">
-                                <input type="submit" class="btn btn-primary" value="Crear" class="btn btn-primary">
+                                <input type="submit" class="btn btn-primary" value="Crear" >
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -141,7 +140,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                             </div>
                             <div class="modal-footer mt-5">
                                 <input type="button" class="btn btn-danger" data-bs-dismiss="modal" value="Cancelar">
-                                <input type="submit" class="btn btn-primary" value="Crear" class="btn btn-primary">
+                                <input type="submit" class="btn btn-primary" value="Crear" >
                             </div>
                         </div>
                     </form>
@@ -161,7 +160,6 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
     <?php
         foreach($links as $dato){                               
     ?>
-
     <div class="modal fade" id="eliminarTarjeta<?php echo $dato -> id_link; ?>" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -178,39 +176,20 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                         </div>
                         <div class="modal-footer mt-5">
                             <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-danger btn-lg" value="Eliminar" class="btn btn-primary">
-                        </div>
+                            <input type="submit" class="btn btn-danger btn-lg" value="Eliminar">
+                        </div>           
+                    </form>
                 </div>
-                </form>
             </div>
-
-
-
         </div>
-    </div>
     </div>
     <?php
       }                               
     ?>
 
-
-
-
 </header>
 
-<footer class="container-fluid bg-dark fixed-bottom">
-    <div class="row ">
-        <div class="col-md text-light text-center py-4">Desarrollado por Maximiliano</div>
 
-    </div>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
-    </body>
+    
 
 </html>

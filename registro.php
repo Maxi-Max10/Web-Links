@@ -13,6 +13,34 @@
     <title>Registro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+        <script>
+            $(function()
+            {
+                $("#btn_ajax").click(function(){
+                    var url = "Controller/registrarProceso.php";
+                    $.ajax({
+                        type:"POST",
+                        url: url,
+                        data: $("#form_ajax").serialize(),
+                        success: function(data)
+                        {
+                            //para que se me borren los alertas cuando el campo cumplte las condiciones
+                            $('#e_nombre').html('');
+                            $('#e_usuario').html('');
+                            $('#e_email').html('');
+                            $('#e_password').html('');
+
+                            $("#mensaje").html(data);
+                        }
+
+                    });
+                });
+            });
+        </script>
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
@@ -35,76 +63,46 @@
         <div class="d-flex justify-content-center">
             <img src="Includes/assets/login-icon.svg" alt="login-icon" style="height: 7rem" />
         </div>
-        <!-- INICIO ALERTA -->
-        <?php
-                //si existe = isset
-                if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'vacio'){
-                                   
-            ?>
-        <div class="alert alert-danger d-flex align-items-center width-10" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="10" height="10" role="img" aria-label="Danger:">
-                <use xlink:href="#exclamation-triangle-fill" />
-            </svg>
-            <div>
-                Existen campos vacios!
-            </div>
-        </div>
-        <?php
-              }
-            ?>
-
-        <?php
-                //si existe = isset
-                if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'password'){
-                                   
-            ?>
-        <div class="alert alert-danger d-flex align-items-center width-10" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="10" height="10" role="img" aria-label="Danger:">
-                <use xlink:href="#exclamation-triangle-fill" />
-            </svg>
-            <div>
-                Las contraseñas no coinciden!
-            </div>
-        </div>
-        <?php
-              }
-            ?>
-        <!-- INICIO ALERTA -->
+       
         <div class="text-center fs-1 fw-bold">
-
+        <div><h3>Formulario de Registro</h3></div>
         </div>
-        <form action="Controller/registrarProceso.php" method="POST">
+        
+        <div id="mensaje"></div>
+        
+        <form id="form_ajax" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
-                    <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />
-                </div>
-                <input class="form-control bg-light" type="text" placeholder="Nombre" name="nombre" />
-            </div>
+                    <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />                    
+                </div> 
+                <input class="form-control bg-light" type="text" placeholder="Nombre" name="nombre" />              
+            </div>          
+                <div id="e_nombre" class="text-danger"></div>
+     
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />
                 </div>
                 <input class="form-control bg-light" type="text" placeholder="Nombre de Usuario" name="usuario" />
+                <div id="e_usuario"></div>
             </div>
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/envelope-fill.svg" alt="username-icon" style="height: 1rem" />
                 </div>
                 <input class="form-control bg-light" type="text" placeholder="Email" name="email" />
+                <div id="e_email"></div>
             </div>
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/password-icon.svg" alt="password-icon" style="height: 1rem" />
                 </div>
                 <input class="form-control bg-light" type="password" placeholder="Password" name="password_us" />
-            </div>
-            
-
-
-
-            
+                <div id="e_password"></div>
+            </div>    
             <div class="d-grid gap-2">
-                <input type="submit" class="btn btn-info mt-5 text-white" ></input>
+                <input type="hidden" name="ajax">
+                <input type="button" id="btn_ajax" class="btn btn-info mt-5 text-white" value="Enviar"></input>
             </div>
         </form>
 
