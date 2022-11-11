@@ -19,11 +19,6 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
 }
 
 ?>
-
-<!doctype html>
-<html lang="en">
-
-<header>
     <!-- place navbar here -->
     <div class="container mt-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -31,12 +26,12 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                 foreach($links as $dato){                               
             ?>
             <div class="col mt-5">
-                <div class="card h-100">
+                <div class="card h-100 shadow ho" >
 
                     <div class="card-body mb-3">
-                        <h5 class="card-title"><?php echo $dato -> title; ?></h5>
+                        <h5 class="card-title text-center "><?php echo $dato -> title; ?></h5>
                         <p class="card-text"><?php echo $dato -> description; ?></p>
-                        <a au class="card-text" href="<?php echo $dato -> url; ?>">URL</a>
+                        <a class="card-text" href="<?php echo $dato -> url; ?>" target="_blank"><i class="bi bi-globe2"></i></a>
                         <div class="row justify-content-around mt-3">
                             <div class="col-2">
                                 <a class="text-success" data-bs-target="#editarTarjeta<?php echo $dato -> id_link; ?>"
@@ -89,7 +84,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                                         value=""></h6>
                             </div>
                             <div class="mb-3">
-                                <h6 class="card-title"> Descripcion <input type="text" class="form-control"
+                                <h6 class="card-title "> Descripcion <input type="text" class="form-control"
                                         name="description" require value=""></h6>
                             </div>
                             <div class="modal-footer mt-5">
@@ -135,7 +130,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                                         value="<?php echo $dato->url; ?>"></h6>
                             </div>
                             <div class="mb-3">
-                                <h6 class="card-title"> Descripcion <input type="text" class="form-control"
+                                <h6 class="card-title"> Descripcion <input type="text" class="form-control " rows="3"
                                         name="description" require value="<?php echo $dato->description; ?>"></h6>
                             </div>
                             <div class="modal-footer mt-5">
@@ -187,9 +182,5 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
       }                               
     ?>
 
-</header>
 
 
-    
-
-</html>

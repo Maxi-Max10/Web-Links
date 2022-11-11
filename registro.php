@@ -7,13 +7,14 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="Includes/assets/logo-vt.svg" />
+    <link rel="icon" type="image/x-icon" href="Includes/assets/Untitled.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-    
+    <!-- iconos cdn -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <!-- JQUERY -->
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
@@ -70,14 +71,14 @@
         
         <div id="mensaje"></div>
         
-        <form id="form_ajax" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+        <form id="form_ajax" method="POST" action="">
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />                    
                 </div> 
-                <input class="form-control bg-light" type="text" placeholder="Nombre" name="nombre" />              
+                <input class="form-control bg-light" type="text" placeholder="Nombre" name="nombre" require/>              
             </div>          
-                <div id="e_nombre" class="text-danger"></div>
+                <div style="font-size: 12px;" id="e_nombre" class="text-danger"></div>
      
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
@@ -85,7 +86,7 @@
                 </div>
                 <input class="form-control bg-light" type="text" placeholder="Nombre de Usuario" name="usuario" />               
             </div>
-            <div id="e_usuario" class="text-danger"></div>
+            <div id="e_usuario" class="text-danger" style="font-size: 12px;"></div>
 
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
@@ -93,15 +94,20 @@
                 </div>
                 <input class="form-control bg-light" type="text" placeholder="Email" name="email"/>                
             </div>
-            <div id="e_email" class="text-danger"></div>
+            <div id="e_email" class="text-danger" style="font-size: 12px;"></div>
 
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/password-icon.svg" alt="password-icon" style="height: 1rem" />
                 </div>
-                <input class="form-control bg-light" type="password" placeholder="Password" name="password_us" />
+                <input class="form-control bg-light" type="password" placeholder="Password" id="password" name="password_us"  />
+                <span onclick="mostrar();">
+                    <i class="bi bi-eye" id="ver" style="margin-left: 5px; margin-top: 9px;"></i>
+                    <i class="bi bi-eye-slash" id="ocultar" style="display: none; margin-left: 5px; margin-top: 9px;"></i>
+                </span>
+                
             </div>   
-            <div id="e_password" class="text-danger"></div> 
+            <div id="e_password" class="text-danger" style="font-size: 12px;"></div> 
             
             <div class="d-grid gap-2">
                 <input type="hidden" name="ajax">
@@ -117,3 +123,4 @@
 
 
 </html>
+<script type="text/javascript" src="Includes/js/mostrar.js"></script>

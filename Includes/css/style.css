@@ -1,0 +1,13 @@
+.ho{
+    
+    box-shadow: 5px 9px 13px rgba(0, 0, 0, 0.57) !important;
+}
+
+.ho:hover{
+    transform: translateY(-5px) !important;
+    text-shadow: none !important;
+    cursor: pointer !important;
+    transition: all 0.5s ease !important;   
+    box-shadow: 0 10px 14px rgba(9, 9, 9, 0.43) !important;
+    
+}
