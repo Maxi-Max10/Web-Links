@@ -16,6 +16,11 @@
     $sentenciaUsu->execute(array($usuario));
     $resultadoUsu = $sentenciaUsu->fetch();
 
+    $buscoMail = "SELECT * FROM usuarios WHERE email = ? ;";
+    $sentenciaMail = $bd->prepare($buscoMail);
+    $sentenciaMail->execute(array($email));
+    $resultadoMail = $sentenciaMail->fetch();
+
     // var_dump($resultadoUsu); imprimo
 
     
@@ -46,10 +51,13 @@
     }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $mensaje = "<script>document.getElementById('e_email').innerHTML='Invalido';</script>";
 
-    }else if (strlen($password) < 6) {
+    }else  if ($resultadoMail) {
+        $mensaje = "<script>document.getElementById('e_email').innerHTML='El mail ya se encuentra en uso';</script>";
+
+    }else  if (strlen($password) < 6) {
         $mensaje = "<script>document.getElementById('e_password').innerHTML='Contraseña invalida';</script>";
 
-    }if (!preg_match('/^\S+$/',$password)) {
+    }else if(!preg_match('/^\S+$/',$password)){
         $mensaje = "<script>document.getElementById('e_password').innerHTML='No valida';</script>"; 
 
     }else{

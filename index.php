@@ -19,6 +19,8 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
 }
 
 ?>
+
+
     <!-- place navbar here -->
     <div class="container mt-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -135,7 +137,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                             </div>
                             <div class="modal-footer mt-5">
                                 <input type="button" class="btn btn-danger" data-bs-dismiss="modal" value="Cancelar">
-                                <input type="submit" class="btn btn-primary" value="Crear" >
+                                <input type="submit" class="btn btn-primary" value="Editar" >
                             </div>
                         </div>
                     </form>
@@ -181,6 +183,12 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
     <?php
       }                               
     ?>
+    
 
 
 
+<?php
+// include 'Vista/footer.php';
+
+?>
+   
