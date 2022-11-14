@@ -12,7 +12,7 @@ $descripcion = $_POST['description'];
 // print_r($_POST);
 
 
-$sentencia = $bd->prepare("INSERT INTO links(title,url,description,usuario_id) VALUES (?,?,?,?);");// no inserto id porque se va incrementando automaticamente
+$sentencia = $bd->prepare("INSERT INTO links(title,url,description,usuario_id) VALUES (?,?,?,?);");
 $resultado = $sentencia->execute([$titulo,$url,$descripcion,$id]);
 
 

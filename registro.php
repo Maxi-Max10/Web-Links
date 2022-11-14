@@ -17,31 +17,6 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <!-- JQUERY -->
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-
-        <script>
-            $(function()
-            {
-                $("#btn_ajax").click(function(){
-                    var url = "Controller/registrarProceso.php";
-                    $.ajax({
-                        type:"POST",
-                        url: url,
-                        data: $("#form_ajax").serialize(),
-                        success: function(data)
-                        {
-                            //para que se me borren los alertas cuando el campo cumplte las condiciones
-                            $('#e_nombre').html('');
-                            $('#e_usuario').html('');
-                            $('#e_email').html('');
-                            $('#e_password').html('');
-
-                            $("#mensaje").html(data);
-                        }
-
-                    });
-                });
-            });
-        </script>
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
@@ -124,3 +99,28 @@
 
 </html>
 <script type="text/javascript" src="Includes/js/mostrar.js"></script>
+
+<script>
+            $(function()
+            {
+                $("#btn_ajax").click(function(){
+                    var url = "Controller/registrarProceso.php";
+                    $.ajax({
+                        type:"POST",
+                        url: url,
+                        data: $("#form_ajax").serialize(),
+                        success: function(data)
+                        {
+                            //para que se me borren los alertas cuando el campo cumplte las condiciones
+                            $('#e_nombre').html('');
+                            $('#e_usuario').html('');
+                            $('#e_email').html('');
+                            $('#e_password').html('');
+
+                            $("#mensaje").html(data);
+                        }
+
+                    });
+                });
+            });
+</script>

@@ -22,12 +22,16 @@ if (isset($_SESSION['id'])) {
 
 </head>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
     <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
     <?php
                
-                if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no'){                                  
+                if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no'){ 
+                                                     
             ?>
+                <script>swal("Error!", "Email invalido!", "error");</script>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Campos Inválidos
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

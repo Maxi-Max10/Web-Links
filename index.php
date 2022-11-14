@@ -1,17 +1,14 @@
 <?php
-
-// NO ME DEJA VER EL ID DEL USUARIO SI NO TENGO TARJETAS CREADAS
-
 session_start();
 
 include 'Vista/header.php';
 
-if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo mande a login
+if (!isset($_SESSION['id'])) {
     header('Location: login.php');
 }elseif(isset($_SESSION['id'])){
     include 'model/conexion.php';//
     $id = $_SESSION['id'];   
-    $sentencia = $bd->query("SELECT * FROM links WHERE usuario_id = '".$id."'");// estos tres los borro y lo cambio por el de la pagina
+    $sentencia = $bd->query("SELECT * FROM links WHERE usuario_id = '".$id."'");
     $links = $sentencia->fetchAll(PDO::FETCH_OBJ);//
 
 }else{
@@ -19,9 +16,6 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
 }
 
 ?>
-
-
-    <!-- place navbar here -->
     <div class="container mt-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
