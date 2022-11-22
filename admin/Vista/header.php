@@ -18,7 +18,7 @@ if (!isset($_SESSION['id_adm'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="../Includes/assets/Untitled.svg" />
+    <link rel="icon" type="image/x-icon" href="../Includes/assets/Logo.ico" />
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,10 +30,11 @@ if (!isset($_SESSION['id_adm'])) {
 </head>
 
 <body>
-<div class="container-fluid" style="background: #e4fbfb";>
+<div class="container-fluid shadow" style="background: #e4fbfb";>
     <nav class="navbar navbar-expand-lg " style="background: #e4fbfb;">
         
             <a class="navbar-brand" href="#">WEBLINK</a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,10 +42,13 @@ if (!isset($_SESSION['id_adm'])) {
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mt-2 mb-2 me-auto">
                     <li class="nav-item">
+                    <a class="nav-link active "  aria-current="page"  href="index.php">Inicio</a>
+                    </li>
+                    <li class="nav-item">
                         <a style="cursor: pointer;" class="nav-link active bi bi-file-earmark-plus-fill" aria-current="page"  data-bs-target="#crearUsuario" data-bs-toggle="modal">Crear Usuario</a> 
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page" href="cerrarA.php">Cerrar Sesion</a>
+                        <a class="nav-link active bi bi-box-arrow-left" aria-current="page" href="cerrarA.php"> Cerrar Sesión</a>
                     </li> 
                 </ul>
                
@@ -59,9 +63,6 @@ if (!isset($_SESSION['id_adm'])) {
    </nav>
     </div>
 
-    <!-- Validacion de formulario -->
-    <script src="Includes/js/validarForm.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
      <!-- JQUERY -->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -74,4 +75,9 @@ if (!isset($_SESSION['id_adm'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
+    
+    <!-- Validacion de formulario -->
+    <script src="Includes/js/validarForm.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
     </body>

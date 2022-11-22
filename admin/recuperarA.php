@@ -7,20 +7,19 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="Includes/assets/Logo.ico" />
+    <link rel="icon" type="image/x-icon" href="../Includes/assets/Logo.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro</title>
+    <title>Recuperar contraseña</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
     <!-- iconos cdn -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <!-- JQUERY -->
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-        <script src="js/scrollreveal.js"></script>
 </head>
 
-<body class="bg-light d-flex justify-content-center align-items-center vh-100 ver">
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
             <path
@@ -42,25 +41,17 @@
         </div>
        
         <div class="text-center fs-1 fw-bold">
-        <div><h3>Formulario de Registro</h3></div>
+        <div><h3>Recuperación de contraseña</h3></div>
         </div>
         
         <div id="mensaje"></div>
         
-        <form id="form_ajax" method="POST" action="">
-            <div class="input-group mt-4">
-                <div class="input-group-text bg-info">
-                    <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />                    
-                </div> 
-                <input class="form-control bg-light" type="text" placeholder="Nombre" name="nombre" require/>              
-            </div>          
-                <div style="font-size: 12px;" id="e_nombre" class="text-danger"></div>
-     
+        <form id="form_ajaxR" method="POST" action="">
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />
                 </div>
-                <input class="form-control bg-light" type="text" placeholder="Nombre de Usuario" name="usuario" />               
+                <input class="form-control bg-light" type="text" placeholder="Nombre de usuario" name="usuario" />               
             </div>
             <div id="e_usuario" class="text-danger" style="font-size: 12px;"></div>
 
@@ -72,22 +63,11 @@
             </div>
             <div id="e_email" class="text-danger" style="font-size: 12px;"></div>
 
-            <div class="input-group mt-4">
-                <div class="input-group-text bg-info">
-                    <img src="Includes/assets/password-icon.svg" alt="password-icon" style="height: 1rem" />
-                </div>
-                <input class="form-control bg-light" type="password" placeholder="Contraseña" id="password" name="password_us"  />
-                <div class="input-group-append">
-                    <span class="input-group-text" onclick="mostrar();">
-                    <i class="bi bi-eye" id="ver" ></i>
-                    <i class="bi bi-eye-slash" id="ocultar" style="display: none;"></i>
-                </span>
-                </div>          
-            </div> 
+           
             <div id="e_password" class="text-danger" style="font-size: 12px;"></div>
             <div class="d-grid gap-2">
-                <input type="hidden" name="ajax">
-                <input type="button" id="btn_ajax" class="btn btn-info mt-5 text-white" value="Enviar"></input>
+                <input type="hidden" name="ajaxR">
+                <input type="button" id="btn_ajaxR" class="btn btn-info mt-5 text-white" value="Enviar"></input>
             </div>
         </form>
 
@@ -96,27 +76,22 @@
 
 
 
-
-
-</html>
-<script type="text/javascript" src="Includes/js/mostrar.js"></script>
-
 <script>
             $(function()
             {
-                $("#btn_ajax").click(function(){
-                    var url = "Controller/registrarProceso.php";
+                $("#btn_ajaxR").click(function(){
+                    var url = "Controller/recuperarAdmin.php";
                     $.ajax({
                         type:"POST",
                         url: url,
-                        data: $("#form_ajax").serialize(),
+                        data: $("#form_ajaxR").serialize(),
                         success: function(data)
                         {
                             //para que se me borren los alertas cuando el campo cumplte las condiciones
-                            $('#e_nombre').html('');
+                           
                             $('#e_usuario').html('');
                             $('#e_email').html('');
-                            $('#e_password').html('');
+                            
 
                             $("#mensaje").html(data);
                         }
@@ -125,4 +100,3 @@
                 });
             });
 </script>
-<script src="js/index.js"></script>

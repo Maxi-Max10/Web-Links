@@ -17,12 +17,12 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
 ?>
 
 <head>
-    <title>Bienvenido a WEB LINK</title>
+    <title>WEBLINK</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="./Includes/assets/Untitled.svg" />
-
+    <link rel="icon" type="image/x-icon" href="Includes/assets/Logo.ico" />
+    <!--<script src="js/scrollreveal.js"></script>-->
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -31,11 +31,13 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
         <!-- iconos cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./Includes/css/style.css">
+
+    
     
 </head>
 
 <body>
-<div class="container-fluid" style="background: #e4fbfb";>
+<div class="container-fluid shadow" style="background: #e4fbfb";>
     <nav class="navbar navbar-expand-lg " style="background: #e4fbfb;">
         
             <a class="navbar-brand" href="#">WEBLINK</a>
@@ -52,7 +54,7 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
                         <a style="cursor: pointer;" class="nav-link active bi bi-file-earmark-plus-fill" aria-current="page"  data-bs-target="#crearTarjeta" data-bs-toggle="modal">Crear Tarjeta</a> 
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page" href="cerrar.php">Cerrar Sesion</a>
+                        <a class="nav-link active bi bi-box-arrow-left" aria-current="page" href="cerrar.php"> Cerrar Sesión</a>
                     </li> 
                 </ul>
                 
@@ -70,6 +72,14 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
        
     </nav>
     </div>
+     <!-- Validacion de formulario -->
+     <script src="./Includes/js/validarFormT.js"></script>
+     <script src="Includes/js/validarTarjeta.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--<script src="js/index.js"></script>-->
+
+     <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -79,4 +89,5 @@ if (!isset($_SESSION['id'])) {//si NO existe una sesion llamada nombre que lo ma
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
+    
     </body>

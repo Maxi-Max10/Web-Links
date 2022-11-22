@@ -1,28 +1,21 @@
 <?php
-session_start();
+    $mensaje = null;
 
-include_once '../model/conexion.php';
+    include_once '../model/conexion.php';
 
+    $id = $_POST['id'];
+    $titulo = $_POST['title'];
+    $url = $_POST['url'];
+    $descripcion = $_POST['description'];
 
-$id = $_POST['id'];
-$titulo = $_POST['title'];
-$url = $_POST['url'];
-$descripcion = $_POST['description'];
+    // print_r($_POST);
 
-// print_r($_POST);
-
-
-$sentencia = $bd->prepare("INSERT INTO links(title,url,description,usuario_id) VALUES (?,?,?,?);");
-$resultado = $sentencia->execute([$titulo,$url,$descripcion,$id]);
+    $sentencia = $bd->prepare("INSERT INTO links(title,url,description,usuario_id) VALUES (?,?,?,?);");
+    $resultado = $sentencia->execute([$titulo,$url,$descripcion,$id]);
 
 
-if ($resultado === TRUE) {
-    header('Location: ../index.php');
-} else {
-    //header('Location: index.php?mensaje=error');
-    echo "error";
-    exit();
-}
-
+    $mensaje = "<script>window.location='index.php';</script>";
+   
+    echo $mensaje;
 
 ?>

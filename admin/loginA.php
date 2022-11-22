@@ -13,7 +13,7 @@ if (isset($_SESSION['id_adm'])) {
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="Includes/assets/Untitled.svg" />
+    <link rel="icon" type="image/x-icon" href="Includes/assets/Logo.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar Sesión</title>
@@ -29,7 +29,7 @@ if (isset($_SESSION['id_adm'])) {
                 if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no'){                                  
             ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Error!</strong> Campos Inválidos
+                <strong>Error!</strong> Por favor ingrese un usuario y contraseña válidos.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <?php
@@ -58,7 +58,7 @@ if (isset($_SESSION['id_adm'])) {
             <div class="d-flex left-content-around mt-1">
 
                 <div class="pt-1 ">
-                    <a href="#" class="text-decoration-none text-info fw-semibold fst-italic text"
+                    <a href="recuperarA.php" class="text-decoration-none text-info fw-semibold fst-italic text"
                         style="font-size: 0.8rem">¿Ovidaste tu contraseña?</a>
                 </div>
             </div>
@@ -74,3 +74,17 @@ if (isset($_SESSION['id_adm'])) {
 </html>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="../Includes/js/alerts.js"></script>
+  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+     <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>

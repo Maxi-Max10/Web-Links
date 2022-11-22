@@ -4,12 +4,21 @@ function submitForm(){
     var usuario = $('#usuario').val();
     var email = $('#email').val();
     var password_us = $('#password_us').val();
+    
     if(usuario.trim() == '' ){
         swal("Error!", "Por favor ingrese usuario!", "error");
         $('#usuario').focus();
         return false;
-    }else if(nombre.trim() == '' ){
+    }else if(usuario.trim().length < 3 ){
+        swal("Error!", "El usuario debe contener al menos 3 caracteres!", "error");
+        $('#usuario').focus();
+        return false;
+    }else  if(nombre.trim() == '' ){
         swal("Error!", "Por favor ingrese nombre!", "error");
+        $('#nombre').focus();
+        return false;
+    }else if(nombre.length < 3 ){
+        swal("Error!", "El nombre debe contener al menos 3 caracteres!", "error");
         $('#nombre').focus();
         return false;
     }else if(email.trim() == '' ){
@@ -20,8 +29,8 @@ function submitForm(){
         swal("Error!", "Email invalido!", "error");
         $('#email').focus();
         return false;
-    }else if(password_us.trim() == '' ){
-        swal("Error!", "Por favor ingrese contraseña!", "error");
+    }else if(password_us.trim() < 6 ){
+        swal("Error!", "La contraseña debe contener por lo menos 6 caracteres!", "error");
         $('#password_us').focus();
         return false;
     }else{
@@ -39,4 +48,5 @@ function submitForm(){
             }
         });
     }
-}
+};
+

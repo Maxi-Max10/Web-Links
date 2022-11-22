@@ -72,8 +72,7 @@
                                     <td><?php echo $dato -> password_us; ?></td>
                                     <td><?php echo $dato -> fecha_registro; ?></td>
                                     
-                                    <td><a class="text-success" data-bs-target="#editarUsuario<?php echo $dato -> id; ?>"
-                                    data-bs-toggle="modal">
+                                    <td><a class="text-success" href="editarUsu.php?id=<?php echo $dato -> id; ?>">
                                         <i class="bi bi-pencil-square"></i></a></td>
                                     <td><a class="text-danger" data-bs-target="#eliminarUsuario<?php echo $dato -> id; ?>"
                                     data-bs-toggle="modal">
@@ -129,7 +128,7 @@
                             <div id="e_emailU" class="text-danger" style="font-size: 12px;"></div>
 
                             <div class="mb-3">
-                                <h6 class="card-title"> Password <input type="text" id="password_us" class="form-control " rows="3"
+                                <h6 class="card-title"> Contraseña <input type="text" id="password_us" class="form-control " rows="3"
                                         name="password_us" require ></h6>
                             </div>
                             <div id="e_passwordU" class="text-danger" style="font-size: 12px;"></div> 
@@ -147,7 +146,7 @@
         </div>
     </div>
 
- <!-- MODALS EDITAR -->
+ <!-- MODALS EDITAR 
  <?php
         foreach($usuarios as $dato){                               
     ?>
@@ -155,6 +154,7 @@
     <div class="modal fade" id="editarUsuario<?php echo $dato -> id; ?>" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
+            <div id="mensaje"></div>
                 <div class="modal-header">
                     <h3 class="modal-title">Editar Usuario</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -168,28 +168,28 @@
                             style="visibility: hidden;">
                         <div class="card-body">
                             <div class="mb-3">
-                                <h6 class="card-title"> ID<input type="text" class="form-control" 
+                                <h6 class="card-title"> ID<input type="text"  class="form-control" 
                                        disabled value="<?php echo $dato->id; ?>"></h6>
                             </div>
                             <div class="mb-3">
-                                <h6 class="card-title"> Usuario<input type="text" class="form-control" name="usuario"
+                                <h6 class="card-title"> Usuario<input type="text" id="usuario" class="form-control" name="usuario"
                                 require value="<?php echo $dato->usuario; ?>"></h6>
                             </div>
                             <div class="mb-3">
-                                <h6 class="card-title"> Nombre<input type="text" class="form-control" name="nombre"
+                                <h6 class="card-title"> Nombre<input type="text" id="nombre" class="form-control" name="nombre"
                                         require value="<?php echo $dato->nombre; ?>"></h6>
                             </div>
                             <div class="mb-3">
-                                <h6 class="card-title"> Email <input type="text" class="form-control" name="email" require
+                                <h6 class="card-title"> Email <input type="text" id="email" class="form-control" name="email" require
                                         value="<?php echo $dato->email; ?>"></h6>
                             </div>
                             <div class="mb-3">
-                                <h6 class="card-title"> Password <input type="text" class="form-control " rows="3"
+                                <h6 class="card-title"> Contraseña <input id="password_us" type="text" class="form-control " rows="3"
                                         name="password_us" require value="<?php echo $dato->password_us; ?>"></h6>
                             </div>
                             <div class="modal-footer mt-5">
                                 <input type="button" class="btn btn-danger" data-bs-dismiss="modal" value="Cancelar">
-                                <input type="submit" class="btn btn-primary" value="Editar" >
+                                <input type="submit" class="btn btn-primary" value="Guardar">
                             </div>
                         </div>
                     </form>
@@ -200,6 +200,7 @@
     <?php
       }                               
     ?>
+-->
 
 <!-- MODALS ELIMINAR -->
 
@@ -210,7 +211,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">¿Esta seguro que desea eliminar a <?php echo $dato -> nombre; ?> ?</h4>
+                    <h4 class="modal-title">¿Está seguro que desea eliminar a <?php echo $dato -> nombre; ?> ?</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
