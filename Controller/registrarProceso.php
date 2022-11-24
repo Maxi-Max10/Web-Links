@@ -21,14 +21,13 @@
     $sentenciaMail->execute(array($email));
     $resultadoMail = $sentenciaMail->fetch();
 
-    // var_dump($resultadoUsu); imprimo
 
     
     if ($nombre == "") {
         $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombre.';</script>"; 
 
     }else if (!preg_match('/^\S+$/',$nombre)) {
-        $mensaje = "<script>document.getElementById('e_nombre').innerHTML='No ingrese solo espacios';</script>"; 
+        $mensaje = "<script>document.getElementById('e_nombre').innerHTML='No ingrese espacios';</script>"; 
 
     }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
         $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Solo se permiten letras!';</script>";
@@ -40,7 +39,7 @@
         $mensaje = "<script>document.getElementById('e_usuario').innerHTML='Por favor ingrese usuario.';</script>";
 
     }else if (!preg_match('/^\S+$/',$usuario)) {
-        $mensaje = "<script>document.getElementById('e_usuario').innerHTML='No ingrese solo espacios.';</script>"; 
+        $mensaje = "<script>document.getElementById('e_usuario').innerHTML='No ingrese espacios.';</script>"; 
 
     }else if ($resultadoUsu) {
         $mensaje = "<script>document.getElementById('e_usuario').innerHTML='El usuario ya existe.';</script>";

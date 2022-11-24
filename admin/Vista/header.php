@@ -3,7 +3,7 @@
 if (!isset($_SESSION['id_adm'])) {
     header('Location: loginA.php');
 }else if(isset($_SESSION['id_adm'])){
-    include 'Model/conexion.php';
+    include 'model/conexion.php';
     $id_adm = $_SESSION['id_adm'];   
     $sentencia = $bd->query("SELECT * FROM admin WHERE id_adm = '".$id_adm."'");
     $links = $sentencia->fetchAll(PDO::FETCH_OBJ);//

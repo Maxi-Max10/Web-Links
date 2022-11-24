@@ -1,9 +1,9 @@
 window.sr = ScrollReveal();
 
 sr.reveal('.ver', {
-    duration: 3000,
+    duration: 2000,
     origin: 'bottom',
-    distance:'-200px'
+    distance:'-100px'
 });
 
 sr.reveal('.logM', {

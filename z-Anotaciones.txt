@@ -1,0 +1,36 @@
+                ------------------- include y required -------------------
+
+Include --> INSERTA CODIGO CODIGO DE OTRO ARCHIVO EN EL ARCHIVO DONDE USAMOS EL INCLUDE.
+            MOSTRANDO UN MENSAJE DE TIPO -WARNING- Y EL CODIGO SEGUIRA COMPILANDO.
+
+Include_one --> MUESTRA UN -WARNING- Y DEJA SEGUIR CON LA EJECUCION DEL SCRIPT
+
+required --> SI HAY ALGUN ERROR EN EL CÓDIGO O NO EXISTIERA NOS MOSTRARIA UN -FATAL ERROR- Y SE DETENDRIA LA EJECUCION.
+
+require_one --> esta ejecuin es mas estricta y detendria toda la ejecucion mostrando un -FATAL ERROR-
+
+
+                ------------------- Funcione en validaciones PHP -------------------
+EL SIGNO DE EXCLAMACION ! SE LEERIA ASI, SI NO ES VERDADERO QUE IMPRIMA EL MENSAJE
+
+EJEMPLO EXPRECIONES REGULARES:
+- $sololetras = "/^[a-z]+$/i";
+- $numerosnaturales = "/^[0-9]+$/";
+
+preg_match --> BUSCA Y COMPARA CADENAS CON EXPRECIONES REGULARES DEVUELVE TRUE O FALSE
+EJEMPLO:
+if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
+        $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Solo se permiten letras!';</script>";
+
+    }
+
+
+
+
+filter_var --> DEVUELVE UN VALOR BOOLEANO. PRIMERO PONGO LA VARIABLE QUE QUIERO A ANALIZAR Y DESPUES LE DIGO  QUE TIPO DE COMPROBACION QUIERO QUE HAGA PHP.
+
+EJEMPLO:
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $mensaje = "<script>document.getElementById('e_email').innerHTML='Email inválido.';</script>";
+
+ }

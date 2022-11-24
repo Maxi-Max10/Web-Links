@@ -24,7 +24,7 @@ if (isset($_SESSION['id'])) {
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<body class="bg-light d-flex justify-content-center align-items-center vh-100 logM">
+<body class="bg-light d-flex justify-content-center align-items-center vh-100 ">
     <div class="bg-white p-5 rounded-5 text-secondary shadow " style="width: 25rem">
             <?php
                
