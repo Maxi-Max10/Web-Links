@@ -1,5 +1,5 @@
 function submitForm(){
-    var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+.)+[A-Z]{2,4}$/i;
+    var reg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     var nombre = $('#nombre').val();
     var usuario = $('#usuario').val();
     var email = $('#email').val();
@@ -25,7 +25,7 @@ function submitForm(){
         swal ( "Error!" ,  "Ingrese email!" ,  "error" )
         $('#email').focus();
         return false;
-    }else if(email.trim() != '' && !reg.test(email)){
+    }else if(!reg.test(email)){
         swal("Error!", "Email invalido!", "error");
         $('#email').focus();
         return false;

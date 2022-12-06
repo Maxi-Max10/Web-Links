@@ -6,10 +6,10 @@ include 'Vista/header.php';
 if (!isset($_SESSION['id'])) {
     header('Location: login.php');
 }elseif(isset($_SESSION['id'])){
-    include 'model/conexion.php';//
+    include 'model/conexion.php';
     $id = $_SESSION['id'];   
     $sentencia = $bd->query("SELECT * FROM links WHERE usuario_id = '".$id."'");
-    $links = $sentencia->fetchAll(PDO::FETCH_OBJ);//
+    $links = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
 }else{
     echo "ERROR EN EL SISTEMA";
@@ -101,7 +101,7 @@ if (!isset($_SESSION['id'])) {
 <!-- MODALS EDITAR 
 
 
-<div class="modal fade" id="editarTarjeta<?php echo $dato -> id_link; ?>" tabindex="-1">
+<div class="modal fade" id="editarTarjeta<?php /*echo $dato -> id_link; ?>" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -130,7 +130,7 @@ if (!isset($_SESSION['id'])) {
                         </div>
                         <div class="mb-3">
                             <h6 class="card-title"> Descripción <input type="text" class="form-control " rows="3" id="descriptionE"
-                                    name="description" require value="<?php echo $dato->description; ?>"></h6>
+                                    name="description" require value="<?php echo $dato->description; */?>"></h6>
                         </div>
                         <div class="modal-footer mt-5">
                         <input type="hidden" name="ajaxE">

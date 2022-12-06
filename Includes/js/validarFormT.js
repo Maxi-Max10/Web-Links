@@ -5,7 +5,7 @@ function validarFormT(){
 
     if (url.trim() == '') {
         swal("Error!", "Por favor ingrese url!", "error");
-        $('#url').focus();
+        
         return false;
     }else{
         $.ajax({
@@ -23,6 +23,6 @@ function validarFormT(){
         });
 
     }
-    
+ 
 };
 

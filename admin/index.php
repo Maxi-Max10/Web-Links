@@ -148,7 +148,7 @@
 
  <!-- MODALS EDITAR 
  <?php
-        foreach($usuarios as $dato){                               
+      /*  foreach($usuarios as $dato){                               
     ?>
 
     <div class="modal fade" id="editarUsuario<?php echo $dato -> id; ?>" tabindex="-1">
@@ -197,8 +197,9 @@
             </div>
         </div>
     </div>
+    
     <?php
-      }                               
+      }  */                             
     ?>
 -->
 

@@ -20,9 +20,8 @@
     $sentenciaMail = $bd->prepare($buscoMail);
     $sentenciaMail->execute(array($email));
     $resultadoMail = $sentenciaMail->fetch();
+ 
 
-
-    
     if ($nombre == "") {
         $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombre.';</script>"; 
 

@@ -11,7 +11,10 @@ require_one --> esta ejecuin es mas estricta y detendria toda la ejecucion mostr
 
 
                 ------------------- Funcione en validaciones PHP -------------------
+expresiones regulares - son patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas.
+
 EL SIGNO DE EXCLAMACION ! SE LEERIA ASI, SI NO ES VERDADERO QUE IMPRIMA EL MENSAJE
+                                         SI NO COINCIDEN LAS COMPARACIONES LE DIGO QUE IMPRIMA
 
 EJEMPLO EXPRECIONES REGULARES:
 - $sololetras = "/^[a-z]+$/i";
@@ -25,8 +28,6 @@ if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
     }
 
 
-
-
 filter_var --> DEVUELVE UN VALOR BOOLEANO. PRIMERO PONGO LA VARIABLE QUE QUIERO A ANALIZAR Y DESPUES LE DIGO  QUE TIPO DE COMPROBACION QUIERO QUE HAGA PHP.
 
 EJEMPLO:
@@ -34,3 +35,12 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $mensaje = "<script>document.getElementById('e_email').innerHTML='Email inválido.';</script>";
 
  }
+
+
+ ISSET DEVUELVE UN VALOR TRUE SI LA VARIABLE EXISTE Y TIENE UN VALOR DOISTINTO DE NULL, FALSE DE LO CONTRARIO.
+ EMPTY DEVUELVE FALSE SI LA VARIABLE EXISTE Y TIENE UN VALOR NO VACIO, DISTINTO DE CERO. DE OTRO MODO DEVULEVE TRUE.
+
+PDO PROPORCION AUN CAPA DE ABSTRACCION DE ACCESOS DE DATOS, INDEPENDIENTEMENTE DE LA BASE DE DATOS UTILIZADA, SE USAN LAS MISMAS FUNCIONES PARA 
+    REALIZAR CONSULTAS Y OBTENER DATOS.
+
+PDO::FETCH_OBJ dEVUELVE UN OBJETO CUYAS PROPIEDADES COINCIDEN CON LAS COLUMNAS DE LA TABLA/CAMPOS REGISTROS

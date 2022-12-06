@@ -23,7 +23,9 @@ if (!isset($_SESSION['id'])) {
 <div class="container mt-5 ">
     <div class="row justify-content-center">
         <h3 class="mb-3 text-center">Editar Tarjeta</h3>
-<div id="mensajeED"></div>
+
+        <div id="mensajeED"></div>
+        
             <div class="modal-body">
                 <form method="POST" action="" id="form_ajaxE">
                     <input type="text" id="id_linkE" name="id_link" value="<?php echo $dato->id_link; ?> "
@@ -71,7 +73,7 @@ if (!isset($_SESSION['id'])) {
                         data: $("#form_ajaxE").serialize(),
                         success: function(data)
                         {
-                            //para que se me borren los alertas cuando el campo cumplte las condiciones
+                            //para que se me borren los alertas cuando el campo cumple las condiciones
                             $('#e_urlE').html('');
                             
 
